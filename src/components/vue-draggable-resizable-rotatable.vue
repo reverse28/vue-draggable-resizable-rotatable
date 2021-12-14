@@ -203,7 +203,7 @@ export default {
     this.elmW = this.$el.offsetWidth || this.$el.clientWidth
     this.elmH = this.$el.offsetHeight || this.$el.clientHeight
 
-    this.reviewDimensions()
+   // this.reviewDimensions()
   },
   beforeDestroy () {
     document.documentElement.removeEventListener('mousemove', this.handleMove, true)
