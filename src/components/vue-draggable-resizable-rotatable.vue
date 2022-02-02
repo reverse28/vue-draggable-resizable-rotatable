@@ -39,6 +39,9 @@ export default {
     active: {
       type: Boolean, default: false
     },
+    deactiveRoot: {
+      type: Boolean, default: false
+    },
     draggable: {
       type: Boolean, default: true
     },
@@ -203,7 +206,7 @@ export default {
     this.elmW = this.$el.offsetWidth || this.$el.clientWidth
     this.elmH = this.$el.offsetHeight || this.$el.clientHeight
 
-   // this.reviewDimensions()
+    // this.reviewDimensions()
   },
   beforeDestroy () {
     document.documentElement.removeEventListener('mousemove', this.handleMove, true)
@@ -260,6 +263,10 @@ export default {
       this.$emit('resizing', this.left, this.top, this.width, this.height)
     },
     elmDown (e) {
+      if (this.deactiveRoot) {
+        return
+      }
+
       const target = e.target || e.srcElement
 
       if (this.$el.contains(target)) {
@@ -657,7 +664,7 @@ export default {
     h (val) {
       this.height = val
     },
-       x (val) {
+    x (val) {
       this.left = val
     },
     y (val) {
