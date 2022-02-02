@@ -277,12 +277,14 @@ export default {
 
         if (!this.enabled) {
         
+
           if (!this.deactiveRoot) {
            this.enabled = true
+           this.$emit('update:active', true)
           }
-         
+          
           this.$emit('activated')
-          this.$emit('update:active', true)
+
         }
 
         if (this.draggable) {
