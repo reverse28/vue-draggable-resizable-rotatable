@@ -263,10 +263,7 @@ export default {
       this.$emit('resizing', this.left, this.top, this.width, this.height)
     },
     elmDown (e) {
-      if (this.deactiveRoot) {
-        return
-      }
-
+    
       const target = e.target || e.srcElement
 
       if (this.$el.contains(target)) {
@@ -279,8 +276,11 @@ export default {
         this.reviewDimensions()
 
         if (!this.enabled) {
-          this.enabled = true
-
+        
+          if (!this.deactiveRoot) {
+           this.enabled = true
+          }
+         
           this.$emit('activated')
           this.$emit('update:active', true)
         }
