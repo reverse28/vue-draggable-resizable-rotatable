@@ -12,7 +12,6 @@
       rotating: rotating
     }"
     @mousedown.stop="elmDown"
-    @touchstart.prevent.stop="elmDown"
     @dblclick="fillParent"
   >
     <div
@@ -23,7 +22,6 @@
       :class="'handle-' + handle"
       :style="{ display: enabled ? 'block' : 'none', cursor: cursorStyle[index]}"
       @mousedown.stop.prevent="handleDown(handle, $event)"
-      @touchstart.stop.prevent="handleDown(handle, $event)"
     ></div>
     <slot></slot>
   </div>
