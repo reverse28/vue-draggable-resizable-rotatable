@@ -159,7 +159,12 @@ export default {
     deselectCancel: {
       type: String,
       default: null
+    },
+     trasform_point: {
+      type: String,
+      default: 'center'
     }
+
   },
 
   created () {
@@ -623,6 +628,7 @@ export default {
         width: this.width + 'px',
         height: this.height + 'px',
         transform: 'rotate(' + this.rotate + 'deg)',
+        'transform-origin': this.trasform_point,
         zIndex: this.zIndex
       }
     },
