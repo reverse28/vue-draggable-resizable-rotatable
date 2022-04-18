@@ -3,13 +3,13 @@
     <div style="height: 500px; width: 500px; margin: 20px; border: 1px solid red; position: relative;">
       <button class="button1">cancel deselect 1</button>
       <button class="button2">cancel deselect 2</button>
-      <VueDraggableResizableRotatable :x="50" :y="50" :w="400" :h="400" :parent="true" deselectCancel=".button1,.button2">
+      <VueDraggableResizableRotatable :x="50" :y="50" :w="400" :h="400" :transform_point="'50px 50px'"  :parent="true" deselectCancel=".button1,.button2">
         <p>Component</p>
       </VueDraggableResizableRotatable>
     </div>
     <div style="height: 500px; width: 500px; margin: 20px; border: 1px solid red; position: relative;">
       <h2>Grid 30x30</h2>
-      <VueDraggableResizableRotatable :x="50" :y="50" :w="400" :h="400" :grid="[30, 30]" :parent="true">
+      <VueDraggableResizableRotatable :x="50" :y="50" :w="400" :h="400" :grid="[30, 30]" :transform_point="'right bottom'" :parent="true">
         <p>Component</p>
       </VueDraggableResizableRotatable>
     </div>
