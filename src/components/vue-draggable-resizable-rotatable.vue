@@ -160,7 +160,7 @@ export default {
       type: String,
       default: null
     },
-     trasform_point: {
+     transform_point: {
       type: String,
       default: 'center'
     }
@@ -628,7 +628,7 @@ export default {
         width: this.width + 'px',
         height: this.height + 'px',
         transform: 'rotate(' + this.rotate + 'deg)',
-        'transform-origin': this.trasform_point,
+        'transform-origin': this.transform_point,
         zIndex: this.zIndex
       }
     },
