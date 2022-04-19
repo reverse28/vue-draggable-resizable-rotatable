@@ -696,7 +696,7 @@ export default {
   .vdrr.dragging {
     user-select: none;
   }
-  .vdrr.active:after {
+  .vdrr.active {
     content: '';
     position: absolute;
     top: -1px;
@@ -704,11 +704,9 @@ export default {
     bottom: -1px;
     left: -1px;
     border: 1px solid #1baee1;
-
-    
   }
 
-  .vdrr.active:before {
+  .vdrr.active::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -716,13 +714,8 @@ export default {
     border-radius: 50%;
     transform-origin: inherit;
     background: red;
-    transform: scale(0.05); 
+    transform: scale(0.05)
   }
-
-
-
-
-
 
   .handle {
     box-sizing: border-box;
@@ -790,6 +783,7 @@ export default {
     border-left: 1px solid #1baee1;
     transform: translate(-50%, 0);
   }
+  
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="handle-"]:before {
